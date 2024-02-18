@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sandbox/favorites/view/page/favorites_page.dart';
 import 'package:sandbox/news/view/page/sources_page.dart';
+import 'package:sandbox/qualtrics/view/page/qualtrics_page.dart';
 import 'package:sandbox/traffic_light/view/page/traffic_light_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -22,8 +23,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
-  late final _tabController = TabController(length: 2, vsync: this);
-  late final tabs = ['News', 'Favorites'];
+  late final tabs = ['Qualtrics', 'Traffic Light', 'News', 'Favorites'];
+  late final _tabController = TabController(length: tabs.length, vsync: this);
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -45,6 +46,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         physics: const NeverScrollableScrollPhysics(),
         controller: _tabController,
         children: const [
+          QualtricsPage(),
           TrafficLightPage(),
           SourcesPage(),
           FavoritesPage(),

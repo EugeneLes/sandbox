@@ -42,6 +42,8 @@ dependencies:
   isar_flutter_libs: ^3.1.0
   json_annotation: ^4.8.1
   path_provider: ^2.1.0
+  font_awesome_flutter: ^10.6.0
+  qualtrics_digital_flutter_plugin: 1.1.0
 
 dev_dependencies:
   flutter_test:
