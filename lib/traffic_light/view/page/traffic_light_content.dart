@@ -11,11 +11,15 @@ class TrafficLightContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemBuilder: (context, index) {
-        return TLSectionItem(model: model.sections[index]);
-      },
-      itemCount: model.sections.length,
+    print('___ TrafficLightContent, model:$model');
+    return Container(
+      color: Colors.red,
+      child: ListView.builder(
+        itemBuilder: (context, index) {
+          return TLSectionItem(model: model.sections[index]);
+        },
+        itemCount: model.sections.length,
+      ),
     );
   }
 }
