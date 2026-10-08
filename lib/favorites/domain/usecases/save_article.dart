@@ -9,6 +9,6 @@ class SaveArticleUC {
 
   SaveArticleUC(this._repo);
   Future<int> call(ArticleModel article) {
-    return _repo.saveArticle(article.toIsarModel());
+    return _repo.saveArticle(article.toEntity());
   }
 }

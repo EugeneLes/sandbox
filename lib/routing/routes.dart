@@ -28,14 +28,14 @@ final GlobalKey<NavigatorState> shellNavigatorKey = GlobalKey<NavigatorState>();
     TypedGoRoute<FavArticleRoute>(path: 'favoriteart'),
   ],
 )
-class HomeRoute extends GoRouteData {
+class HomeRoute extends GoRouteData with $HomeRoute {
   const HomeRoute();
 
   @override
   Widget build(BuildContext context, GoRouterState state) => const HomePage();
 }
 
-class NewsRoute extends GoRouteData {
+class NewsRoute extends GoRouteData with $NewsRoute {
   const NewsRoute(this.source);
 
   final String source;
@@ -49,7 +49,7 @@ class NewsRoute extends GoRouteData {
   }
 }
 
-class ArticleRoute extends GoRouteData {
+class ArticleRoute extends GoRouteData with $ArticleRoute {
   ArticleRoute(this.source, {required this.$extra});
 
   final NewsArticleViewModel $extra;
@@ -63,7 +63,7 @@ class ArticleRoute extends GoRouteData {
   }
 }
 
-class FavArticleRoute extends GoRouteData {
+class FavArticleRoute extends GoRouteData with $FavArticleRoute {
   FavArticleRoute({required this.$extra});
 
   final NewsArticleViewModel $extra;

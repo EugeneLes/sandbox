@@ -12,7 +12,7 @@ abstract class NewsApi extends ChopperService {
     Authenticator? authenticator,
     Converter? converter,
     Uri? baseUrl,
-    Iterable<dynamic>? interceptors,
+    List<Interceptor>? interceptors,
   }) {
     if (client != null) {
       return _$NewsApi(client);
@@ -48,7 +48,7 @@ abstract class NewsApi extends ChopperService {
     );
   }
 
-  @Get(path: 'v2/everything')
+  @GET(path: 'v2/everything')
   Future<chopper.Response> _getEverything(
     @Query('apiKey') final String apiKey,
     @Query('q') final String? q,
@@ -79,7 +79,7 @@ abstract class NewsApi extends ChopperService {
     );
   }
 
-  @Get(path: '/v2/top-headlines')
+  @GET(path: '/v2/top-headlines')
   Future<chopper.Response> _getTopHeadlines(
     @Query('apiKey') final String apiKey,
     @Query('country') final String? country,
@@ -103,7 +103,7 @@ abstract class NewsApi extends ChopperService {
     );
   }
 
-  @Get(path: '/v2/top-headlines/sources')
+  @GET(path: '/v2/top-headlines/sources')
   Future<chopper.Response> _getSources(
     @Query('apiKey') final String apiKey,
     @Query('category') final String? category,

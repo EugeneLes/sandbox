@@ -5,9 +5,9 @@ import 'package:sandbox/news/view/bloc/sources_bloc.dart';
 import 'package:sandbox/news/view/model/news_article_view_model.dart';
 
 extension ArticleModelX on ArticleModel {
-  Article toIsarModel() => Article()
+  Article toEntity() => Article()
     ..author = author
-    ..source = source.toIsarModel()
+    ..source = source.toEntity()
     ..title = title
     ..description = description
     ..url = url

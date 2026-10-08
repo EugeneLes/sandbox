@@ -68,7 +68,7 @@ extension SourceX on Source {
 }
 
 extension SourceModelX on SourceModel {
-  Source toIsarModel() => Source()
+  Source toEntity() => Source()
     ..id = id
     ..name = name;
 }

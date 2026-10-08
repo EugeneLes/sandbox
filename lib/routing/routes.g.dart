@@ -12,100 +12,130 @@ List<RouteBase> get $appRoutes => [
 
 RouteBase get $homeRoute => GoRouteData.$route(
       path: '/home',
-      factory: $HomeRouteExtension._fromState,
+      hasOverriddenOnExit: false,
+      factory: $HomeRoute._fromState,
       routes: [
         GoRouteData.$route(
           path: ':source',
-          factory: $NewsRouteExtension._fromState,
+          hasOverriddenOnExit: false,
+          factory: $NewsRoute._fromState,
           routes: [
             GoRouteData.$route(
               path: 'article',
-              factory: $ArticleRouteExtension._fromState,
+              hasOverriddenOnExit: false,
+              factory: $ArticleRoute._fromState,
             ),
           ],
         ),
         GoRouteData.$route(
           path: 'favoriteart',
-          factory: $FavArticleRouteExtension._fromState,
+          hasOverriddenOnExit: false,
+          factory: $FavArticleRoute._fromState,
         ),
       ],
     );
 
-extension $HomeRouteExtension on HomeRoute {
+mixin $HomeRoute on GoRouteData {
   static HomeRoute _fromState(GoRouterState state) => const HomeRoute();
 
+  @override
   String get location => GoRouteData.$location(
         '/home',
       );
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $NewsRouteExtension on NewsRoute {
+mixin $NewsRoute on GoRouteData {
   static NewsRoute _fromState(GoRouterState state) => NewsRoute(
         state.pathParameters['source']!,
       );
 
+  NewsRoute get _self => this as NewsRoute;
+
+  @override
   String get location => GoRouteData.$location(
-        '/home/${Uri.encodeComponent(source)}',
+        '/home/${Uri.encodeComponent(_self.source)}',
       );
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $ArticleRouteExtension on ArticleRoute {
+mixin $ArticleRoute on GoRouteData {
   static ArticleRoute _fromState(GoRouterState state) => ArticleRoute(
         state.pathParameters['source']!,
         $extra: state.extra as NewsArticleViewModel,
       );
 
+  ArticleRoute get _self => this as ArticleRoute;
+
+  @override
   String get location => GoRouteData.$location(
-        '/home/${Uri.encodeComponent(source)}/article',
+        '/home/${Uri.encodeComponent(_self.source)}/article',
       );
 
-  void go(BuildContext context) => context.go(location, extra: $extra);
+  @override
+  void go(BuildContext context) => context.go(location, extra: _self.$extra);
 
+  @override
   Future<T?> push<T>(BuildContext context) =>
-      context.push<T>(location, extra: $extra);
+      context.push<T>(location, extra: _self.$extra);
 
+  @override
   void pushReplacement(BuildContext context) =>
-      context.pushReplacement(location, extra: $extra);
+      context.pushReplacement(location, extra: _self.$extra);
 
+  @override
   void replace(BuildContext context) =>
-      context.replace(location, extra: $extra);
+      context.replace(location, extra: _self.$extra);
 }
 
-extension $FavArticleRouteExtension on FavArticleRoute {
+mixin $FavArticleRoute on GoRouteData {
   static FavArticleRoute _fromState(GoRouterState state) => FavArticleRoute(
         $extra: state.extra as NewsArticleViewModel,
       );
 
+  FavArticleRoute get _self => this as FavArticleRoute;
+
+  @override
   String get location => GoRouteData.$location(
         '/home/favoriteart',
       );
 
-  void go(BuildContext context) => context.go(location, extra: $extra);
+  @override
+  void go(BuildContext context) => context.go(location, extra: _self.$extra);
 
+  @override
   Future<T?> push<T>(BuildContext context) =>
-      context.push<T>(location, extra: $extra);
+      context.push<T>(location, extra: _self.$extra);
 
+  @override
   void pushReplacement(BuildContext context) =>
-      context.pushReplacement(location, extra: $extra);
+      context.pushReplacement(location, extra: _self.$extra);
 
+  @override
   void replace(BuildContext context) =>
-      context.replace(location, extra: $extra);
+      context.replace(location, extra: _self.$extra);
 }

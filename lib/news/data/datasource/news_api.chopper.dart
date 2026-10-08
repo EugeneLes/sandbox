@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// dart format width=80
 
 part of 'news_api.dart';
 
@@ -6,15 +7,16 @@ part of 'news_api.dart';
 // ChopperGenerator
 // **************************************************************************
 
-// ignore_for_file: always_put_control_body_on_new_line, always_specify_types, prefer_const_declarations, unnecessary_brace_in_string_interps
-class _$NewsApi extends NewsApi {
+// coverage:ignore-file
+// ignore_for_file: type=lint
+final class _$NewsApi extends NewsApi {
   _$NewsApi([ChopperClient? client]) {
     if (client == null) return;
     this.client = client;
   }
 
   @override
-  final definitionType = NewsApi;
+  final Type definitionType = NewsApi;
 
   @override
   Future<Response<dynamic>> _getEverything(

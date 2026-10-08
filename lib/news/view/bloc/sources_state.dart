@@ -1,7 +1,7 @@
 part of 'sources_bloc.dart';
 
 @freezed
-class SourcesState with _$SourcesState {
+sealed class SourcesState with _$SourcesState {
   const factory SourcesState.initial() = _SourcesInitialState;
   const factory SourcesState.loading() = _SourcesLoadingState;
 

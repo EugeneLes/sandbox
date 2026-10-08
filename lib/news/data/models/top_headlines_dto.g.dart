@@ -9,7 +9,7 @@ part of 'top_headlines_dto.dart';
 TopHeadlinesDTO _$TopHeadlinesDTOFromJson(Map<String, dynamic> json) =>
     TopHeadlinesDTO(
       status: json['status'] as String,
-      totalResults: json['totalResults'] as int,
+      totalResults: (json['totalResults'] as num).toInt(),
       articles: (json['articles'] as List<dynamic>)
           .map((e) => ArticleDTO.fromJson(e as Map<String, dynamic>))
           .toList(),

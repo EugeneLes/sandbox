@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,149 +9,26 @@ part of 'news_bloc.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$NewsEvent {
-  String get source => throw _privateConstructorUsedError;
-  bool get skipLoader => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String source, bool skipLoader) load,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String source, bool skipLoader)? load,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String source, bool skipLoader)? load,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_NewsLoadEvent value) load,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_NewsLoadEvent value)? load,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_NewsLoadEvent value)? load,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  String get source;
+  bool get skipLoader;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NewsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $NewsEventCopyWith<NewsEvent> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $NewsEventCopyWith<$Res> {
-  factory $NewsEventCopyWith(NewsEvent value, $Res Function(NewsEvent) then) =
-      _$NewsEventCopyWithImpl<$Res, NewsEvent>;
-  @useResult
-  $Res call({String source, bool skipLoader});
-}
-
-/// @nodoc
-class _$NewsEventCopyWithImpl<$Res, $Val extends NewsEvent>
-    implements $NewsEventCopyWith<$Res> {
-  _$NewsEventCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? source = null,
-    Object? skipLoader = null,
-  }) {
-    return _then(_value.copyWith(
-      source: null == source
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as String,
-      skipLoader: null == skipLoader
-          ? _value.skipLoader
-          : skipLoader // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$_NewsLoadEventCopyWith<$Res>
-    implements $NewsEventCopyWith<$Res> {
-  factory _$$_NewsLoadEventCopyWith(
-          _$_NewsLoadEvent value, $Res Function(_$_NewsLoadEvent) then) =
-      __$$_NewsLoadEventCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String source, bool skipLoader});
-}
-
-/// @nodoc
-class __$$_NewsLoadEventCopyWithImpl<$Res>
-    extends _$NewsEventCopyWithImpl<$Res, _$_NewsLoadEvent>
-    implements _$$_NewsLoadEventCopyWith<$Res> {
-  __$$_NewsLoadEventCopyWithImpl(
-      _$_NewsLoadEvent _value, $Res Function(_$_NewsLoadEvent) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? source = null,
-    Object? skipLoader = null,
-  }) {
-    return _then(_$_NewsLoadEvent(
-      null == source
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as String,
-      skipLoader: null == skipLoader
-          ? _value.skipLoader
-          : skipLoader // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_NewsLoadEvent implements _NewsLoadEvent {
-  const _$_NewsLoadEvent(this.source, {this.skipLoader = false});
+      _$NewsEventCopyWithImpl<NewsEvent>(this as NewsEvent, _$identity);
 
   @override
-  final String source;
-  @override
-  @JsonKey()
-  final bool skipLoader;
-
-  @override
-  String toString() {
-    return 'NewsEvent.load(source: $source, skipLoader: $skipLoader)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NewsLoadEvent &&
+            other is NewsEvent &&
             (identical(other.source, source) || other.source == source) &&
             (identical(other.skipLoader, skipLoader) ||
                 other.skipLoader == skipLoader));
@@ -160,413 +37,553 @@ class _$_NewsLoadEvent implements _NewsLoadEvent {
   @override
   int get hashCode => Object.hash(runtimeType, source, skipLoader);
 
-  @JsonKey(ignore: true)
   @override
+  String toString() {
+    return 'NewsEvent(source: $source, skipLoader: $skipLoader)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $NewsEventCopyWith<$Res> {
+  factory $NewsEventCopyWith(NewsEvent value, $Res Function(NewsEvent) _then) =
+      _$NewsEventCopyWithImpl;
+  @useResult
+  $Res call({String source, bool skipLoader});
+}
+
+/// @nodoc
+class _$NewsEventCopyWithImpl<$Res> implements $NewsEventCopyWith<$Res> {
+  _$NewsEventCopyWithImpl(this._self, this._then);
+
+  final NewsEvent _self;
+  final $Res Function(NewsEvent) _then;
+
+  /// Create a copy of NewsEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  _$$_NewsLoadEventCopyWith<_$_NewsLoadEvent> get copyWith =>
-      __$$_NewsLoadEventCopyWithImpl<_$_NewsLoadEvent>(this, _$identity);
-
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String source, bool skipLoader) load,
+  $Res call({
+    Object? source = null,
+    Object? skipLoader = null,
   }) {
-    return load(source, skipLoader);
+    return _then(_self.copyWith(
+      source: null == source
+          ? _self.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as String,
+      skipLoader: null == skipLoader
+          ? _self.skipLoader
+          : skipLoader // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
   }
+}
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String source, bool skipLoader)? load,
-  }) {
-    return load?.call(source, skipLoader);
-  }
+/// Adds pattern-matching-related methods to [NewsEvent].
+extension NewsEventPatterns on NewsEvent {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String source, bool skipLoader)? load,
-    required TResult orElse(),
-  }) {
-    if (load != null) {
-      return load(source, skipLoader);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_NewsLoadEvent value) load,
-  }) {
-    return load(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_NewsLoadEvent value)? load,
-  }) {
-    return load?.call(this);
-  }
-
-  @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_NewsLoadEvent value)? load,
     required TResult orElse(),
   }) {
-    if (load != null) {
-      return load(this);
+    final _that = this;
+    switch (_that) {
+      case _NewsLoadEvent() when load != null:
+        return load(_that);
+      case _:
+        return orElse();
     }
-    return orElse();
   }
-}
 
-abstract class _NewsLoadEvent implements NewsEvent {
-  const factory _NewsLoadEvent(final String source, {final bool skipLoader}) =
-      _$_NewsLoadEvent;
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
 
-  @override
-  String get source;
-  @override
-  bool get skipLoader;
-  @override
-  @JsonKey(ignore: true)
-  _$$_NewsLoadEventCopyWith<_$_NewsLoadEvent> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-mixin _$NewsState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(NewsViewModel viewModel) loaded,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(NewsViewModel viewModel)? loaded,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(NewsViewModel viewModel)? loaded,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(NewsInitialState value) initial,
-    required TResult Function(NewsLoadingState value) loading,
-    required TResult Function(NewsLoadedState value) loaded,
-  }) =>
-      throw _privateConstructorUsedError;
+    required TResult Function(_NewsLoadEvent value) load,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _NewsLoadEvent():
+        return load(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(NewsInitialState value)? initial,
-    TResult? Function(NewsLoadingState value)? loading,
-    TResult? Function(NewsLoadedState value)? loaded,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(NewsInitialState value)? initial,
-    TResult Function(NewsLoadingState value)? loading,
-    TResult Function(NewsLoadedState value)? loaded,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $NewsStateCopyWith<$Res> {
-  factory $NewsStateCopyWith(NewsState value, $Res Function(NewsState) then) =
-      _$NewsStateCopyWithImpl<$Res, NewsState>;
-}
-
-/// @nodoc
-class _$NewsStateCopyWithImpl<$Res, $Val extends NewsState>
-    implements $NewsStateCopyWith<$Res> {
-  _$NewsStateCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-}
-
-/// @nodoc
-abstract class _$$NewsInitialStateCopyWith<$Res> {
-  factory _$$NewsInitialStateCopyWith(
-          _$NewsInitialState value, $Res Function(_$NewsInitialState) then) =
-      __$$NewsInitialStateCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$NewsInitialStateCopyWithImpl<$Res>
-    extends _$NewsStateCopyWithImpl<$Res, _$NewsInitialState>
-    implements _$$NewsInitialStateCopyWith<$Res> {
-  __$$NewsInitialStateCopyWithImpl(
-      _$NewsInitialState _value, $Res Function(_$NewsInitialState) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$NewsInitialState implements NewsInitialState {
-  const _$NewsInitialState();
-
-  @override
-  String toString() {
-    return 'NewsState.initial()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$NewsInitialState);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(NewsViewModel viewModel) loaded,
+    TResult? Function(_NewsLoadEvent value)? load,
   }) {
-    return initial();
+    final _that = this;
+    switch (_that) {
+      case _NewsLoadEvent() when load != null:
+        return load(_that);
+      case _:
+        return null;
+    }
   }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(NewsViewModel viewModel)? loaded,
-  }) {
-    return initial?.call();
-  }
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
 
-  @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(NewsViewModel viewModel)? loaded,
+    TResult Function(String source, bool skipLoader)? load,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial();
+    final _that = this;
+    switch (_that) {
+      case _NewsLoadEvent() when load != null:
+        return load(_that.source, _that.skipLoader);
+      case _:
+        return orElse();
     }
-    return orElse();
   }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(NewsInitialState value) initial,
-    required TResult Function(NewsLoadingState value) loading,
-    required TResult Function(NewsLoadedState value) loaded,
-  }) {
-    return initial(this);
-  }
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
 
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(NewsInitialState value)? initial,
-    TResult? Function(NewsLoadingState value)? loading,
-    TResult? Function(NewsLoadedState value)? loaded,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(NewsInitialState value)? initial,
-    TResult Function(NewsLoadingState value)? loading,
-    TResult Function(NewsLoadedState value)? loaded,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class NewsInitialState implements NewsState {
-  const factory NewsInitialState() = _$NewsInitialState;
-}
-
-/// @nodoc
-abstract class _$$NewsLoadingStateCopyWith<$Res> {
-  factory _$$NewsLoadingStateCopyWith(
-          _$NewsLoadingState value, $Res Function(_$NewsLoadingState) then) =
-      __$$NewsLoadingStateCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$NewsLoadingStateCopyWithImpl<$Res>
-    extends _$NewsStateCopyWithImpl<$Res, _$NewsLoadingState>
-    implements _$$NewsLoadingStateCopyWith<$Res> {
-  __$$NewsLoadingStateCopyWithImpl(
-      _$NewsLoadingState _value, $Res Function(_$NewsLoadingState) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$NewsLoadingState implements NewsLoadingState {
-  const _$NewsLoadingState();
-
-  @override
-  String toString() {
-    return 'NewsState.loading()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$NewsLoadingState);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(NewsViewModel viewModel) loaded,
+    required TResult Function(String source, bool skipLoader) load,
   }) {
-    return loading();
+    final _that = this;
+    switch (_that) {
+      case _NewsLoadEvent():
+        return load(_that.source, _that.skipLoader);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
   }
 
-  @override
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(NewsViewModel viewModel)? loaded,
+    TResult? Function(String source, bool skipLoader)? load,
   }) {
-    return loading?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(NewsViewModel viewModel)? loaded,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading();
+    final _that = this;
+    switch (_that) {
+      case _NewsLoadEvent() when load != null:
+        return load(_that.source, _that.skipLoader);
+      case _:
+        return null;
     }
-    return orElse();
   }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(NewsInitialState value) initial,
-    required TResult Function(NewsLoadingState value) loading,
-    required TResult Function(NewsLoadedState value) loaded,
-  }) {
-    return loading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(NewsInitialState value)? initial,
-    TResult? Function(NewsLoadingState value)? loading,
-    TResult? Function(NewsLoadedState value)? loaded,
-  }) {
-    return loading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(NewsInitialState value)? initial,
-    TResult Function(NewsLoadingState value)? loading,
-    TResult Function(NewsLoadedState value)? loaded,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class NewsLoadingState implements NewsState {
-  const factory NewsLoadingState() = _$NewsLoadingState;
 }
 
 /// @nodoc
-abstract class _$$NewsLoadedStateCopyWith<$Res> {
-  factory _$$NewsLoadedStateCopyWith(
-          _$NewsLoadedState value, $Res Function(_$NewsLoadedState) then) =
-      __$$NewsLoadedStateCopyWithImpl<$Res>;
-  @useResult
-  $Res call({NewsViewModel viewModel});
-}
 
-/// @nodoc
-class __$$NewsLoadedStateCopyWithImpl<$Res>
-    extends _$NewsStateCopyWithImpl<$Res, _$NewsLoadedState>
-    implements _$$NewsLoadedStateCopyWith<$Res> {
-  __$$NewsLoadedStateCopyWithImpl(
-      _$NewsLoadedState _value, $Res Function(_$NewsLoadedState) _then)
-      : super(_value, _then);
+class _NewsLoadEvent implements NewsEvent {
+  const _NewsLoadEvent(this.source, {this.skipLoader = false});
 
+  @override
+  final String source;
+  @override
+  @JsonKey()
+  final bool skipLoader;
+
+  /// Create a copy of NewsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  _$NewsLoadEventCopyWith<_NewsLoadEvent> get copyWith =>
+      __$NewsLoadEventCopyWithImpl<_NewsLoadEvent>(this, _$identity);
+
   @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _NewsLoadEvent &&
+            (identical(other.source, source) || other.source == source) &&
+            (identical(other.skipLoader, skipLoader) ||
+                other.skipLoader == skipLoader));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, source, skipLoader);
+
+  @override
+  String toString() {
+    return 'NewsEvent.load(source: $source, skipLoader: $skipLoader)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$NewsLoadEventCopyWith<$Res>
+    implements $NewsEventCopyWith<$Res> {
+  factory _$NewsLoadEventCopyWith(
+          _NewsLoadEvent value, $Res Function(_NewsLoadEvent) _then) =
+      __$NewsLoadEventCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String source, bool skipLoader});
+}
+
+/// @nodoc
+class __$NewsLoadEventCopyWithImpl<$Res>
+    implements _$NewsLoadEventCopyWith<$Res> {
+  __$NewsLoadEventCopyWithImpl(this._self, this._then);
+
+  final _NewsLoadEvent _self;
+  final $Res Function(_NewsLoadEvent) _then;
+
+  /// Create a copy of NewsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? viewModel = null,
+    Object? source = null,
+    Object? skipLoader = null,
   }) {
-    return _then(_$NewsLoadedState(
-      null == viewModel
-          ? _value.viewModel
-          : viewModel // ignore: cast_nullable_to_non_nullable
-              as NewsViewModel,
+    return _then(_NewsLoadEvent(
+      null == source
+          ? _self.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as String,
+      skipLoader: null == skipLoader
+          ? _self.skipLoader
+          : skipLoader // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
 /// @nodoc
-
-class _$NewsLoadedState implements NewsLoadedState {
-  const _$NewsLoadedState(this.viewModel);
-
+mixin _$NewsState {
   @override
-  final NewsViewModel viewModel;
-
-  @override
-  String toString() {
-    return 'NewsState.loaded(viewModel: $viewModel)';
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is NewsState);
   }
 
   @override
-  bool operator ==(dynamic other) {
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'NewsState()';
+  }
+}
+
+/// @nodoc
+class $NewsStateCopyWith<$Res> {
+  $NewsStateCopyWith(NewsState _, $Res Function(NewsState) __);
+}
+
+/// Adds pattern-matching-related methods to [NewsState].
+extension NewsStatePatterns on NewsState {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NewsInitialState value)? initial,
+    TResult Function(NewsLoadingState value)? loading,
+    TResult Function(NewsLoadedState value)? loaded,
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case NewsInitialState() when initial != null:
+        return initial(_that);
+      case NewsLoadingState() when loading != null:
+        return loading(_that);
+      case NewsLoadedState() when loaded != null:
+        return loaded(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NewsInitialState value) initial,
+    required TResult Function(NewsLoadingState value) loading,
+    required TResult Function(NewsLoadedState value) loaded,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case NewsInitialState():
+        return initial(_that);
+      case NewsLoadingState():
+        return loading(_that);
+      case NewsLoadedState():
+        return loaded(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NewsInitialState value)? initial,
+    TResult? Function(NewsLoadingState value)? loading,
+    TResult? Function(NewsLoadedState value)? loaded,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case NewsInitialState() when initial != null:
+        return initial(_that);
+      case NewsLoadingState() when loading != null:
+        return loading(_that);
+      case NewsLoadedState() when loaded != null:
+        return loaded(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(NewsViewModel viewModel)? loaded,
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case NewsInitialState() when initial != null:
+        return initial();
+      case NewsLoadingState() when loading != null:
+        return loading();
+      case NewsLoadedState() when loaded != null:
+        return loaded(_that.viewModel);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(NewsViewModel viewModel) loaded,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case NewsInitialState():
+        return initial();
+      case NewsLoadingState():
+        return loading();
+      case NewsLoadedState():
+        return loaded(_that.viewModel);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(NewsViewModel viewModel)? loaded,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case NewsInitialState() when initial != null:
+        return initial();
+      case NewsLoadingState() when loading != null:
+        return loading();
+      case NewsLoadedState() when loaded != null:
+        return loaded(_that.viewModel);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
+
+class NewsInitialState implements NewsState {
+  const NewsInitialState();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is NewsInitialState);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'NewsState.initial()';
+  }
+}
+
+/// @nodoc
+
+class NewsLoadingState implements NewsState {
+  const NewsLoadingState();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is NewsLoadingState);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'NewsState.loading()';
+  }
+}
+
+/// @nodoc
+
+class NewsLoadedState implements NewsState {
+  const NewsLoadedState(this.viewModel);
+
+  final NewsViewModel viewModel;
+
+  /// Create a copy of NewsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $NewsLoadedStateCopyWith<NewsLoadedState> get copyWith =>
+      _$NewsLoadedStateCopyWithImpl<NewsLoadedState>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$NewsLoadedState &&
+            other is NewsLoadedState &&
             (identical(other.viewModel, viewModel) ||
                 other.viewModel == viewModel));
   }
@@ -574,87 +591,43 @@ class _$NewsLoadedState implements NewsLoadedState {
   @override
   int get hashCode => Object.hash(runtimeType, viewModel);
 
-  @JsonKey(ignore: true)
   @override
+  String toString() {
+    return 'NewsState.loaded(viewModel: $viewModel)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $NewsLoadedStateCopyWith<$Res>
+    implements $NewsStateCopyWith<$Res> {
+  factory $NewsLoadedStateCopyWith(
+          NewsLoadedState value, $Res Function(NewsLoadedState) _then) =
+      _$NewsLoadedStateCopyWithImpl;
+  @useResult
+  $Res call({NewsViewModel viewModel});
+}
+
+/// @nodoc
+class _$NewsLoadedStateCopyWithImpl<$Res>
+    implements $NewsLoadedStateCopyWith<$Res> {
+  _$NewsLoadedStateCopyWithImpl(this._self, this._then);
+
+  final NewsLoadedState _self;
+  final $Res Function(NewsLoadedState) _then;
+
+  /// Create a copy of NewsState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  _$$NewsLoadedStateCopyWith<_$NewsLoadedState> get copyWith =>
-      __$$NewsLoadedStateCopyWithImpl<_$NewsLoadedState>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(NewsViewModel viewModel) loaded,
+  $Res call({
+    Object? viewModel = null,
   }) {
-    return loaded(viewModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(NewsViewModel viewModel)? loaded,
-  }) {
-    return loaded?.call(viewModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(NewsViewModel viewModel)? loaded,
-    required TResult orElse(),
-  }) {
-    if (loaded != null) {
-      return loaded(viewModel);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(NewsInitialState value) initial,
-    required TResult Function(NewsLoadingState value) loading,
-    required TResult Function(NewsLoadedState value) loaded,
-  }) {
-    return loaded(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(NewsInitialState value)? initial,
-    TResult? Function(NewsLoadingState value)? loading,
-    TResult? Function(NewsLoadedState value)? loaded,
-  }) {
-    return loaded?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(NewsInitialState value)? initial,
-    TResult Function(NewsLoadingState value)? loading,
-    TResult Function(NewsLoadedState value)? loaded,
-    required TResult orElse(),
-  }) {
-    if (loaded != null) {
-      return loaded(this);
-    }
-    return orElse();
+    return _then(NewsLoadedState(
+      null == viewModel
+          ? _self.viewModel
+          : viewModel // ignore: cast_nullable_to_non_nullable
+              as NewsViewModel,
+    ));
   }
 }
 
-abstract class NewsLoadedState implements NewsState {
-  const factory NewsLoadedState(final NewsViewModel viewModel) =
-      _$NewsLoadedState;
-
-  NewsViewModel get viewModel;
-  @JsonKey(ignore: true)
-  _$$NewsLoadedStateCopyWith<_$NewsLoadedState> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+// dart format on

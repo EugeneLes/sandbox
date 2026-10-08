@@ -74,9 +74,9 @@ class DefaultDtoModels {
     country: 'country',
   );
 
-  //isar models
-  static Article articleIsar = Article()
-    ..source = sourceIsar
+  //favorites storage models
+  static Article articleEntity = Article()
+    ..source = sourceEntity
     ..author = 'author1'
     ..title = 'title1'
     ..description = 'description1'
@@ -84,7 +84,7 @@ class DefaultDtoModels {
     ..urlToImage = 'urlToImage1'
     ..publishedAt = 'publishedAt1'
     ..content = 'content1';
-  static Source sourceIsar = Source()
+  static Source sourceEntity = Source()
     ..id = 'id'
     ..name = 'name';
 }
