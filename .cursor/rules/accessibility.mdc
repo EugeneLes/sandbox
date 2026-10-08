@@ -1,0 +1,22 @@
+---
+description: Accessibility for Flutter pages and widgets
+globs: "lib/**/view/**/*.dart, lib/shared/**/*.dart, lib/home_page.dart"
+alwaysApply: false
+---
+
+# Accessibility
+
+- Icon-only controls need a `tooltip` or `Semantics(label: …)`
+- Decorative images and dividers: `ExcludeSemantics`
+- One logical control, one focus stop. Do not wrap a `FilledButton` in another `Semantics` that repeats its label
+- Expose state (`selected`, `toggled`, `enabled`) on toggles such as favorite
+- Check `context.mounted` after async work before using the tree
+- User-visible strings are inline English. Keep them short and consistent.
+
+```dart
+IconButton(
+  tooltip: 'Remove from favorites',
+  onPressed: _onFavPressed,
+  icon: const Icon(Icons.favorite),
+)
+```

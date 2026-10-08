@@ -1,0 +1,40 @@
+---
+description: Sandbox layout, feature modules, and shared code
+alwaysApply: true
+---
+
+# Sandbox structure
+
+Single Flutter app (`sandbox`) managed with Melos (`useRootAsPackage: true`). Features are folders under `lib/`, not separate packages.
+
+```
+lib/
+  main.dart, app.dart, home_page.dart   # shell, tabs, GoRouter
+  di/di.dart                            # configureDependencies()
+  routing/routes.dart                   # TypedGoRoute + routes.g.dart
+  shared/di/di.dart                     # GetIt instance `get`
+  shared/view/widgets/                  # widgets used by more than one feature
+  <feature>/
+    data/datasource/                    # Chopper APIs, local storage
+    data/models/                        # DTOs (*_dto.dart, *.g.dart)
+    data/repo/
+    domain/models/
+    domain/usecases/                    # *UC
+    view/bloc/                          # bloc + freezed event/state parts
+    view/model/
+    view/page/                          # *_page.dart, *_content.dart
+    view/widgets/
+test/                                   # mirrors lib/ (test/news/view/…)
+```
+
+Existing features: `news`, `favorites`, `traffic_light`.
+
+## Boundaries
+
+- A feature may use `shared` and another feature's domain use cases (see `LoadNewsUC` and favorites). Keep widgets and blocs inside the owning feature.
+- HTTP and persistence stay in `data/`. Pages talk to blocs.
+- New experimental modules use the same `<feature>/` layout. Skip layers the module does not need (`traffic_light` has no remote API).
+
+## Commands
+
+Use FVM. Codegen: `fvm dart run melos run build_runner --no-select`. Format touched files with `fvm dart format --line-length=100`.

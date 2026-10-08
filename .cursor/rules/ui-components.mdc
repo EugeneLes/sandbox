@@ -1,0 +1,28 @@
+---
+description: Shared widgets and Material theme in the sandbox app
+globs: "lib/shared/**/*.dart, lib/**/view/widgets/**/*.dart, lib/**/view/page/**/*.dart"
+alwaysApply: false
+---
+
+# UI
+
+Shared widgets live in `lib/shared/view/widgets/` (`ArticleItem`, `SourceItem`). Feature-only widgets stay in `lib/<feature>/view/widgets/`.
+
+Theme is `ThemeData` in `App` (`ColorScheme.fromSeed`, Material 3). Read it with `Theme.of(context)`.
+
+```dart
+class ArticleItem extends StatelessWidget {
+  const ArticleItem({
+    super.key,
+    required this.model,
+    this.isInFavorites = false,
+  });
+
+  final NewsArticleViewModel model;
+  final bool isInFavorites;
+}
+```
+
+- `const` constructors, `final` fields, `super.key`
+- Pages are `*_page.dart` and usually a `Scaffold`. Extract the body into `*_content.dart` when the bloc state is loaded.
+- Document non-obvious public widgets with `///`

@@ -1,0 +1,50 @@
+---
+description: Bloc and freezed UI state for sandbox features
+globs: "lib/**/view/**/*.dart, lib/**/bloc/**/*.dart"
+alwaysApply: false
+---
+
+# State management
+
+UI state is a `Bloc` with freezed events and states. Register it with `@Injectable()`.
+
+```dart
+@Injectable()
+class NewsBloc extends Bloc<NewsEvent, NewsState> {
+  NewsBloc(this._loadNewsUC) : super(const NewsState.initial()) {
+    on<_NewsLoadEvent>(_loadNews);
+  }
+
+  void init(String source) => add(NewsEvent.load(source));
+}
+```
+
+```dart
+@freezed
+sealed class NewsState with _$NewsState {
+  const factory NewsState.initial() = NewsInitialState;
+  const factory NewsState.loading() = NewsLoadingState;
+  const factory NewsState.loaded(NewsViewModel viewModel) = NewsLoadedState;
+}
+```
+
+Pages create the bloc and branch with `state.when`:
+
+```dart
+BlocProvider(
+  create: (context) => get<NewsBloc>()..init(widget.source),
+  child: BlocBuilder<NewsBloc, NewsState>(
+    builder: (context, state) => state.when(
+      initial: () => const SizedBox(),
+      loading: () => const Center(child: CircularProgressIndicator()),
+      loaded: (uiModel) => NewsContent(model: uiModel),
+    ),
+  ),
+)
+```
+
+- Events and states are `part of` the bloc file.
+- Map domain models to `view/model` types before they reach `loaded`.
+- Cancel `StreamSubscription`s in `close()`.
+- `FavoritesBloc` is provided above the router in `App` because more than one tab reads it. Feature-local blocs stay on the page.
+- Widget-local controllers (`TabController`, text fields) stay on the `State` that owns them.

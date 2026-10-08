@@ -1,0 +1,19 @@
+---
+description: Dart enum conventions for sandbox models
+globs: "lib/**/models/**/*.dart, lib/**/domain/**/*.dart"
+alwaysApply: false
+---
+
+# Enums
+
+Put a plain enum next to the model that owns it (`LightColor` on the traffic-light section model).
+
+```dart
+enum LightColor { red, yellow, green }
+```
+
+- Document non-obvious values
+- Exhaustive `switch` expressions
+- For API strings, add `fromString` with a fallback when the server value differs from `.name`
+- Unknown server values map to a safe fallback so the UI still builds
+- freezed is for bloc events and states, not a substitute for a small enum

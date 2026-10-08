@@ -1,0 +1,26 @@
+---
+description: Typed GoRouter routes in lib/routing/routes.dart
+globs: "lib/routing/**/*.dart, lib/app.dart, lib/home_page.dart, lib/**/page/**/*.dart"
+alwaysApply: false
+---
+
+# Navigation
+
+Routes live in `lib/routing/routes.dart` with `go_router` and `go_router_builder`.
+
+```dart
+@TypedGoRoute<HomeRoute>(path: '/home')
+class HomeRoute extends GoRouteData with $HomeRoute {
+  const HomeRoute();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) => const HomePage();
+}
+```
+
+- `part 'routes.g.dart';` and `List<RouteBase> get routes => $appRoutes;`
+- `App` builds one `GoRouter(routes: routes, initialLocation: initialLocation)`
+- After adding or changing a route, run `fvm dart run melos run build_runner --no-select`
+- Navigate with the generated route: `ArticleRoute(source, $extra: model).go(context)`
+- Path parameters and `$extra` belong on the `GoRouteData` class
+- Top-level experiments can be a `HomePage` tab instead of a new route

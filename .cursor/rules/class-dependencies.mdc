@@ -1,0 +1,23 @@
+---
+description: Constructor injection for repositories, use cases, and blocs
+globs: "**/*_repository.dart, **/*_uc.dart, lib/**/usecases/**/*.dart, lib/**/datasource/**/*.dart, lib/**/bloc/**/*.dart"
+alwaysApply: false
+---
+
+# Constructor injection
+
+Repositories, use cases, datasources, and blocs take dependencies as constructor parameters. `get<T>()` is for widgets and `App`.
+
+```dart
+@Injectable()
+class LoadNewsUC {
+  LoadNewsUC(this._newsRepository, this._favoritesRepository);
+
+  final NewsRepository _newsRepository;
+  final FavoritesRepository _favoritesRepository;
+}
+```
+
+- Store deps in `final` fields. Prefer positional constructor args, matching existing use cases.
+- Keep constructors synchronous. Async setup belongs in `@PostConstruct`.
+- Annotate the class so `di.config.dart` registers it. Run `melos run build_runner` after new types.

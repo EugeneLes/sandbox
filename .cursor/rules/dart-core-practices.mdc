@@ -1,0 +1,34 @@
+---
+description: Dart naming, async, and formatting for the sandbox app
+alwaysApply: true
+---
+
+# Dart core practices
+
+## Naming
+
+- Classes: PascalCase — `NewsRepository`, `LoadNewsUC`, `NewsPage`
+- Members and functions: camelCase — `getTopHeadlines`, `sourceId`
+- Files: snake_case — `news_repository.dart`, `load_news.dart`, `news_page.dart`
+
+## Style
+
+- Single quotes
+- Lines ≤ 100 characters (`fvm dart format --line-length=100`)
+- Trailing commas on multi-line argument lists
+- Early returns over nested `if/else`
+
+## Null safety
+
+- Avoid `!` unless the value is guaranteed (route path parameters already validated by the route)
+- Prefer `??` and `?.`
+
+## Async
+
+- A function marked `async` awaits something
+- Check `context.mounted` before using `BuildContext` after `await`
+- `unawaited(...)` or `await` for futures that must not be dropped
+
+## Lifecycle
+
+`dispose()` / `Bloc.close()` releases what that object created: `TabController`, `TextEditingController`, `ScrollController`, `AnimationController`, `StreamSubscription`, `Timer`.

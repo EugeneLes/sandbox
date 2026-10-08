@@ -1,0 +1,34 @@
+---
+description: Bloc and widget test conventions
+globs: "test/**/*_test.dart"
+alwaysApply: false
+---
+
+# Tests
+
+Use `flutter_test`, `bloc_test`, and `mocktail`. Mirror `lib/` under `test/`.
+
+```
+lib/news/view/bloc/news_bloc.dart
+test/news/view/news_bloc_test.dart
+```
+
+Run `fvm flutter test test/news/view/news_bloc_test.dart` from the repo root.
+
+```dart
+blocTest<NewsBloc, NewsState>(
+  'loads headlines for the source',
+  build: () => NewsBloc(loadNewsUC, watchFavoritesUC),
+  act: (bloc) => bloc.init('bbc-news'),
+  expect: () => [
+    const NewsState.loading(),
+    isA<NewsLoadedState>(),
+  ],
+);
+```
+
+- Test names describe behavior
+- Mocks are private: `class _LoadNewsUCMock extends Mock implements LoadNewsUC {}`
+- `setUp` builds the bloc; `tearDown` calls `bloc.close()`
+- Cover the success path and the failure or empty path the bloc actually emits
+- Widget tests wrap with `MaterialApp`. Pump past `configureDependencies` only when the widget resolves `get<T>()`

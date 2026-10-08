@@ -1,0 +1,34 @@
+---
+description: Register dependencies with injectable and GetIt
+globs: "lib/di/**/*.dart, lib/**/repo/**/*.dart, lib/**/usecases/**/*.dart, lib/**/bloc/**/*.dart, lib/**/datasource/**/*.dart"
+alwaysApply: false
+---
+
+# Injectable
+
+`lib/shared/di/di.dart` holds `final get = GetIt.instance`. `lib/di/di.dart` generates registration:
+
+```dart
+@InjectableInit()
+Future<void> configureDependencies() => get.init();
+```
+
+`App` awaits `configureDependencies()` before building the router.
+
+```dart
+@LazySingleton()
+class NewsRepository { /* ... */ }
+
+@Injectable()
+class LoadNewsUC {
+  LoadNewsUC(this._newsRepository);
+  final NewsRepository _newsRepository;
+}
+```
+
+- `@LazySingleton()` for repositories and long-lived services
+- `@Injectable()` for use cases and blocs (a new bloc per page)
+- Constructor parameters are the dependencies. injectable fills them.
+- Async setup uses `@PostConstruct(preResolve: true)` (see `NewsRepository.init`)
+- After adding or changing annotations, run `fvm dart run melos run build_runner --no-select`
+- Widgets and `App` resolve with `get<T>()`. Repositories and use cases do not call `get`

@@ -1,0 +1,37 @@
+---
+description: Repositories, use cases, and Chopper datasources
+globs: "lib/**/data/**/*.dart, lib/**/domain/**/*.dart"
+alwaysApply: false
+---
+
+# Data and domain
+
+## Datasource
+
+Remote APIs are Chopper services in `data/datasource/`, with a `create()` factory (see `NewsApi`). Generated client: `*.chopper.dart`.
+
+## Repository
+
+`@LazySingleton()` in `data/repo/`. Talks to datasources and returns DTOs or domain models. No `get<T>()` inside the class.
+
+```dart
+@LazySingleton()
+class NewsRepository {
+  late final NewsApi newsApi;
+
+  @PostConstruct(preResolve: true)
+  Future<void> init() async {
+    newsApi = NewsApi.create();
+  }
+}
+```
+
+DTO → domain mapping lives in an extension next to the repository (`SourceX.toModel()`).
+
+## Use case
+
+`@Injectable()` in `domain/usecases/`, named `LoadNewsUC`, `SaveArticleUC`, and so on. One public `call(...)`. Orchestrates repositories and returns a domain model.
+
+## Logging
+
+Do not log API keys, tokens, or passwords.

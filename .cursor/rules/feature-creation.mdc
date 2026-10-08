@@ -1,0 +1,38 @@
+---
+description: How to add an experimental feature module under lib/
+globs: "lib/**/data/**/*.dart, lib/**/domain/**/*.dart, lib/**/view/**/*.dart, lib/home_page.dart, lib/routing/routes.dart"
+alwaysApply: false
+---
+
+# New feature module
+
+Add experiments as `lib/<name>/`, following `news` (full stack) or `traffic_light` (UI + in-memory domain).
+
+## Layout
+
+```
+lib/<name>/
+  data/repo/<name>_repository.dart       # when something is loaded or stored
+  domain/models/
+  domain/usecases/<action>_uc.dart       # @Injectable, call()
+  view/bloc/<name>_bloc.dart             # @Injectable, freezed event + state
+  view/model/
+  view/page/<name>_page.dart
+  view/widgets/
+```
+
+- Pages end in `_page.dart`. Screen content that is not the route widget ends in `_content.dart`.
+- Bloc file owns `part` files: `<name>_event.dart`, `<name>_state.dart`, `<name>_bloc.freezed.dart`.
+
+## Wiring
+
+1. Annotate new blocs, use cases, and repositories (`@Injectable()` or `@LazySingleton()`).
+2. Run `fvm dart run melos run build_runner --no-select` so `lib/di/di.config.dart` updates.
+3. Show it from `HomePage` tabs for a quick experiment, or add a `TypedGoRoute` in `lib/routing/routes.dart` when it needs its own path.
+4. Resolve the bloc in the page: `get<NameBloc>()..init(...)`.
+
+## Keep out of the module
+
+- A second `GetIt` or manual `registerSingleton` next to injectable
+- Chopper clients constructed in widgets
+- A new pub package, unless the user asks to split the Melos workspace

@@ -1,0 +1,35 @@
+---
+description: Early returns and exhaustive switches on freezed state and enums
+alwaysApply: true
+---
+
+# Control flow
+
+Guard at the top. A 2-branch `if/else` is fine when both branches continue.
+
+```dart
+String formatGreeting(String? name) {
+  if (name == null || name.isEmpty) return 'Hello, stranger!';
+  return 'Hello, $name!';
+}
+```
+
+Bloc UI uses freezed `when` so every state is handled:
+
+```dart
+state.when(
+  initial: () => const SizedBox(),
+  loading: () => const Center(child: CircularProgressIndicator()),
+  loaded: (model) => NewsContent(model: model),
+);
+```
+
+Enums use a switch expression:
+
+```dart
+Color colorFor(LightColor color) => switch (color) {
+  LightColor.red => Colors.red,
+  LightColor.yellow => Colors.yellow,
+  LightColor.green => Colors.green,
+};
+```
